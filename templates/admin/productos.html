@@ -1,0 +1,32 @@
+{% include 'admin/cabecera.html'%}
+
+<div class="row">
+    <div class="col-md-5">
+<div class="card">
+    <div class="card-header">
+        Datos del libro
+    </div>
+    <div class="card-body">
+    <!-- Agrega el formulario de edición aquí -->
+    <form action="/admin/libros/editar" method="POST">
+        <div class="mb-3">
+            <label for="libro_id" class="form-label">ID del Libro a Editar:</label>
+            <input type="text" class="form-control" name="libro_id" id="libro_id" placeholder="Ingrese el ID del libro a editar">
+        </div>
+        <div class="mb-3">
+            <label for="nuevo_nombre" class="form-label">Nuevo Nombre:</label>
+            <input type="text" class="form-control" name="nuevo_nombre" id="nuevo_nombre" placeholder="Ingrese el nuevo nombre">
+        </div>
+        <div class="mb-3">
+            <label for="nuevo_url" class="form-label">Nueva URL:</label>
+            <input type="text" class="form-control" name="nuevo_url" id="nuevo_url" placeholder="Ingrese la nueva URL">
+        </div>
+        <button type="submit" class="btn btn-warning">Editar Libro</button>
+    </form>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>
+</div>
+</div>
+{% include 'sitio/pie.html'%}
