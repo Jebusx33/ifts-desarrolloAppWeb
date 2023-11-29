@@ -3,6 +3,25 @@
 <h1>Libros</h1>
 
 
+
+
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for libro in libros %}
+    <div class="col">
+      <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+        <img style="height: 50%; width: 80%;"  src="{{ url_for('imagenes', imagen=libro['imagen']) }}" alt="{{ libro['titulo'] }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ libro['descripcion'] }}</h5>
+          <a name="" id="" class="btn btn-primary" href="/descripcion" role="button">Descarga</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+<!--
     <div class="row">
         <div class="col-md-3">
             <div class="card">
@@ -46,6 +65,6 @@
         </div>
         
     </div>
-
+-->
 
 {% include 'sitio/pie.html'%}

@@ -1,14 +1,132 @@
 {% include 'sitio/cabecera.html'%}
-
+<div id="carouselId" class="carousel slide" data-bs-ride="carousel" >
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+    <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+  </ol>
+  <div class="carousel-inner " role="listbox" style="width: 100% !important;">
+    <div class="carousel-item active" >
+      <img src="{{ url_for('static', filename='img/carousel/01.jpg') }}"class="w-100 d-block"  alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/carousel/02.jpg') }}" class="w-100 d-block" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/carousel/03.jpg') }}"class="w-100 d-block" alt="Third slide">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+</div>
 <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">Bienvenidos a la Tienda</h1>
       <p class="col-md-8 fs-4">Tienda de productos</p>
       <hr class="my-2">
       <p class="lead"></p>
-      <a name="" id="" class="btn btn-primary btn-lg" href="/libros" role="button">Productos</a>
+      <a name="" id="" class="btn btn-primary btn-lg" href="/productos" role="button">Productos</a>
     </div>
   </div>
 
-    
+<br>
+
+
+<br>
+<h1>Productos Celulares</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos_celulares %}
+        <div class="col">
+            <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+                <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto['nombre'] }}</h5>
+                    <p class="card-text">{{ producto['descripcion'] }}</p>
+                    <p class="card-text">Precio: ${{ producto['precio'] }}</p>
+                    <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+                    <a name="" id="" class="btn btn-secondary btn-default mb-3" href="" role="button">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<h1>Productos Consolas</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos_consolas %}
+        <div class="col">
+            <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+                <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto['nombre'] }}</h5>
+                    <p class="card-text">{{ producto['descripcion'] }}</p>
+                    <p class="card-text">Precio: ${{ producto['precio'] }}</p>
+                    <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+                    <a name="" id="" class="btn btn-secondary btn-default mb-3" href="" role="button">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+    <br>
+<h1>Productos Televisores</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos_televisores %}
+        <div class="col">
+            <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+                <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto['nombre'] }}</h5>
+                    <p class="card-text">{{ producto['descripcion'] }}</p>
+                    <p class="card-text">Precio: ${{ producto['precio'] }}</p>
+                    <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+                    <a name="" id="" class="btn btn-secondary btn-default mb-3" href="" role="button">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<h1>Productos Auriculares</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos_auriculares %}
+        <div class="col">
+            <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+                <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto['nombre'] }}</h5>
+                    <p class="card-text">{{ producto['descripcion'] }}</p>
+                    <p class="card-text">Precio: ${{ producto['precio'] }}</p>
+                    <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+                    <a name="" id="" class="btn btn-secondary btn-default mb-3" href="" role="button">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<h1>Todos los Productos</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos %}
+        <div class="col">
+            <div class="card h-100" style="height: 80% !important; width: 80% !important;">
+                <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto['nombre'] }}</h5>
+                    <p class="card-text">{{ producto['descripcion'] }}</p>
+                    <p class="card-text">Precio: ${{ producto['precio'] }}</p>
+                    <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+                    <a name="" id="" class="btn btn-secondary btn-default mb-3" href="" role="button">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
     {% include 'sitio/pie.html'%}

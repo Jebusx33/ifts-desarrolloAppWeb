@@ -1,0 +1,30 @@
+{% include 'sitio/cabecera.html'%}
+
+<h1>Productos</h1>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    {% for producto in productos %}
+    <div class="col">
+      <div class="card h-100 " style="height: 80% !important; width: 80% !important;">
+        <img style="height: 50%; width: 80%;" src="{{ url_for('imagenes', imagen=producto['imagen']) }}" alt="{{ producto['nombre'] }}" class="card-img-top imagen-curso u-full-width" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{ producto['nombre'] }}</h4>
+          <p class="card-text">{{ producto['categoria'] }}</p>
+          <p class="card-text">{{ producto['descripcion'] }}</p>
+          <p class="card-text precio">Precio: ${{ producto['precio'] }}</p>
+          <!-- Agrega aquí cualquier otro contenido específico de los productos -->
+          <a name="" id="" class="btn btn-secondary btn-default mb-3 agregar-carrito  button input u-full-width " href="" role="button">Agregar al Carrito</a>
+          <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="9">Agregar Al Carrito</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- Agregar la paginación -->
+<div class="pagination-container">
+  {{ pagination.info }}
+  
+  {{ pagination.links }}
+</div>
+{% include 'sitio/pie.html'%}
