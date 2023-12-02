@@ -12,7 +12,7 @@ from flask import Flask, session
 
 app=Flask(__name__)
 #conectar a la Base de Datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:root@localhost/sitio_ifts_desarrollo'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:root1234@localhost/sitio_ifts_desarrollo'
 app.secret_key = 'a'  # clave secreta
 mysql = SQLAlchemy(app)
 
