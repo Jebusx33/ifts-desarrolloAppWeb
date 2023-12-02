@@ -1,6 +1,7 @@
 #Flask==1.0.0
 flask==3.0.0
 Flask-MySQLdb==0.2.0
+'''
 blinker==1.7.0
 click==8.1.7
 flask-paginate==2023.10.24
@@ -18,3 +19,4 @@ SQLAlchemy==2.0.23
 typing-extensions==4.8.0
 werkzeug==3.0.1
 zipp==3.17.0
+'''
